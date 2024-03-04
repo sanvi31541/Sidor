@@ -2,7 +2,7 @@ module.exports.config = {
   name: "join",
   eventType: ['log:subscribe'],
   version: "1.0.0",
-  credits: "Mirai-Team", // FIXED BY YAN Nayan
+  credits: "Mcs-Team", // FIXED BY YAN BADOL
   description: "GROUP UPDATE NOTIFICATION"
 };
 
@@ -36,8 +36,8 @@ module.exports.run = async function({ api, event, Users }) {
   if (thu == "Thursday") thu = 'Thursday'
   if (thu == 'Friday') thu = 'Friday'
   if (thu == 'Saturday') thu = 'Saturday'
-  const time = moment.tz("Asia/dhaka").format("HH:mm:ss - DD/MM/YYYY");
-  const hours = moment.tz("Asia/dhaka").format("HH");
+  const time = moment.tz("Asia/dhaka").format("hh:mm:ss - DD/MM/YYYY");
+  const hours = moment.tz("Asia/dhaka").format("hh");
   const { commands } = global.client;
   const { threadID } = event;
   let threadInfo = await api.getThreadInfo(event.threadID);
@@ -48,31 +48,21 @@ module.exports.run = async function({ api, event, Users }) {
   if (event.logMessageData.addedParticipants && Array.isArray(event.logMessageData.addedParticipants) && event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
     //api.changeNickname(`𝗕𝗢𝗧 ${(!global.config.BOTNAME) ? "Buddy" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
 
-    let gifUrl = 'https://i.postimg.cc/SNQXkB0y/lv-0-20231018174834.gif';
-let gifPath = __dirname + '/Nayan/join/join.gif';
+    let gifUrl = 'https://i.imgur.com/YKq92XP.mp4';
+let gifPath = __dirname + '/Nayan/join/BADOLKHAN1.mp4';
 
 axios.get(gifUrl, { responseType: 'arraybuffer' })
 .then(response => {
     fs.writeFileSync(gifPath, response.data);
-    return api.sendMessage("চলে এসেছি আমি পিচ্চি নয়ন তোমাদের মাঝে🤭!", event.threadID, () => api.sendMessage({ body: `${global.config.BOTNAME} CONNECTED«\n\nAssalamualaykum☘️
-<------------------------------>  
-BOT CONNECTED SUCCESFUL !!! 
-
-APPROVAL ALLOW IN THIS GROUP!!!
-<------------------------------>\n\nTO VIEW ANY COMMAND Use👉${global.config.PREFIX}help\nSee command👉 ${global.config.PREFIX}command
-\n\EXAMPLE:👇\n${global.config.PREFIX}admin (information)\n${global.config.PREFIX}islam (video)\n${global.config.PREFIX}tik (link)\n${global.config.PREFIX}fbvideo (link)
-<------------------------------>
-AND FOR ANY COMPLAINTS OR CONTACT BOT OPERATOR 
-
-DEVELOPER :Mohammad Nayan 
-
-🟣Facebook Account Link: 
-
-https://www.facebook.com/www.xnxx.com169
-
-🔵WHATSAPP NUMBER: wa.me/+8801615298449
-
-🟢SUPPORT EMAIL: www.mdmnnm2004@gmail.com`, attachment: fs.createReadStream(gifPath)}, threadID));
+    return api.sendMessage("•━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•\n\n★𝙈𝘾𝙎-𝙍𝙊𝘽𝙊𝙏-𝙄𝙎-𝘽𝙆★\n\n•━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•", event.threadID, () => api.sendMessage({body:`★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★\n★আসসালামুআলাইকুম-কেমন-আছেন-সবাই★\n
+★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★\n\n
+◄▒▓██▰▱▰▱𝘽𝘼𝘿𝙊𝙇-𝘽𝙊𝙏-𝟬𝟬𝟳▰▱▰▱██▓▒►\n\n
+★বট সংযুক্ত গ্রুপ চ্যাটে সফলভাবে যোগ করা হচ্ছে★\n
+★কিরে বাঁদর গুলা শয়তানি করার জন্য অ্যাড দিছস★
+⫷⫷━━━━━━━━━━━━━━━━━━━━━━━━━━━━⫸⫸\n\nযেকোনো কমান্ড দেখতে ${global.config.PREFIX}help ব্যবহার করুন\n
+\n\n╔═══════☆♡☆═══════╗\n\n╰┈➤উদাহারণ➤\n\n╰┈➤${global.config.PREFIX}inf ➤ \n╰┈➤${global.config.PREFIX}admin ➤ \n╰┈➤${global.config.PREFIX}owner ➤ \n╰┈➤${global.config.PREFIX}help ➤\n\n┗━━━━ ✦❘༻༺❘✦ ━━━━━┛
+⫷⫷━━━━━━━━━━━━━━━━━━━━━━━━━━━━⫸⫸\n\n\n★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★\n\n
+★যেকোনো অভিযোগ অথবা হেল্প এর জন্য আমার★\n★বস ✰𝐑𝐚𝐣𝐚_𝐁𝐚𝐛𝐮★ কে নক করতে পারেন★\n\n\n╰┈➤𝙂𝙈𝘼𝙄𝙇: badolbot007gmail.\n\n╰┈➤ 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆: https://www.facebook.com/RAJA.BABU.TERA.REAL.ABBU.OK.07\n\n╰┈➤𝙈𝙀𝙎𝙎𝙀𝙉𝙂𝙀𝙍: m.me/100007070042228\n\n\★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★\n\n◄▒▓██▰▱▰▱𝘽𝘼𝘿𝙊𝙇-𝘽𝙊𝙏-𝟬𝟬𝟳▰▱▰▱██▓▒►`, attachment: fs.createReadStream(gifPath)}, threadID));
 })
 .catch(error => {
     console.error(error);
@@ -161,7 +151,7 @@ https://www.facebook.com/www.xnxx.com169
         abx.push(fs.createReadStream(__dirname + `/Nayan/join/${o}.png`))
       }
       memLength.sort((a, b) => a - b);
-      (typeof threadData.customJoin == "undefined") ? msg = `Hello {name}\nWelcome to {threadName}\nyou're the {soThanhVien}th member on this group please enjoy"\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
+      (typeof threadData.customJoin == "undefined") ? msg = `•━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•\n\n╔════•|      ✿      |•════╗\n 💐আ্ঁস্ঁসা্ঁলা্ঁমু্ঁ💚আ্ঁলা্ঁই্ঁকু্ঁম্ঁ💐\n╚════•|      ✿      |•════╝\n\n    ╰┈➤W⃠E⃠L⃠L⃠ C⃠O⃠M⃠E⃠➤\n\n                 ╰┈➤𝐍𝐄𝐖➤\n\n        ~🇲‌🇪‌🇲‌🇧‌🇪‌🇷‌~\n\n             ╰┈➤ {name} ➤\n\n༄✺আ্ঁপ্ঁনা্ঁকে্ঁ আ্ঁমা্ঁদে্ঁর্ঁ✺࿐\n\n{threadName}\n\n 🌺🌿🌸—এ্ঁর্ঁ প্ঁক্ষ্ঁ🍀থে্ঁকে্ঁ🍀—🌸🌿\n\n         🌿_ভা্ঁলো্ঁবা্ঁসা্ঁ_অ্ঁভি্ঁরা্ঁম্ঁ_🌿\n\n༄✺আঁপঁনিঁ এঁইঁ গ্রুঁপেঁর {soThanhVien} নঁং মে্ঁম্বা্ঁরঁ ࿐\n\n╔═━────━▒•✠•❀•✠• ▒━────━═╗\n╰┈➤𝐁𝐎𝐓'𝐬 𝐎𝐖𝐍𝐄𝐑➤\n\n            ☟                     \n\n✰𝐑𝐚𝐣𝐚_𝐁𝐚𝐛𝐮★\n┗━━━━ ✦❘༻•✠•❀•✠•༺❘✦ ━━━━━┛\n\n★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★\n\n★𝗠 𝗖 𝗦★𝗕 𝗢 𝗧★𝟬 𝟬 𝟳★\n\n★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★\n\n•━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•\n\nগুপে আসার জন্য তোমাকে অন্তরের অন্তর স্থল থেকে জানাই অবিরাম ভালবাসা!!-\n🖤🌻🥀🖤━━╬٨♪❤٨ـﮩﮩـ╬━❤️❥\n⭕⭕হা্ঁসি্ঁ ম্ঁজা্ঁ ঠা্ঁট্টা্ঁয়্ঁ ব্ঁন্ধু্ঁত্ব্ঁ হ্ঁবে্ঁ চি্ঁর্ঁকা্ঁলী্ঁন্ঁ বে্ঁচে্ঁ থা্ঁকু্ঁক্ঁ ব্ঁন্ধু্ঁত্ব্ঁ\nভা্ঁলো্ঁবা্ঁসা্ঁর্ঁ স্ঁম্প্ঁর্কে্ঁ আ্ঁজী্ঁব্ঁন্ঁ⭕⭕❉্᭄͜͡...\n▓▓▓▓▓▓▓▓\n\nআমাদের সাথে সময় দেওয়া ও পাশে থাকার অনুরোধ রইলো !!-🍂🌺🥀\n\n🦋༎❤❤༎\n\nⵗⵗ̥̥̊̊ⵗ̥̥̥̥̊̊̊ⵗ̥̥̥̥̥̊̊̊̊ⵗ̥̥̥̥̥̥̊̊̊̊̊ⵗ̥̥̥̥̥̥̥̊̊̊̊̊ⵗ̥̥̥̥̥̥̥̥̊̊̊̊ⵗ̥̥̥̥̥̥̥̥̥̊̊̊ⵗ̥̥̥̥̥̥̥̥̥̥̊̊ⵗ̥̥̥̥̥̥̥̥̥̥̥ⵗ̥̥̥̥̥̥̥̥̥̥̊̊ⵗ̥̥̥̥̥̥̥̥̥̊̊̊ⵗ̥̥̥̥̥̥̥̥̊̊̊̊ⵗ̥̥̥̥̥̥̥̊̊̊̊̊ⵗ̥̥̥̥̥̥̊̊̊̊̊ⵗ̥̥̥̥̥̊̊̊̊ⵗ̥̥̥̥̊̊̊ⵗ̥̥̊̊ \n\n🦋║ლ💞 💞 ლ║🦋\n\n💐☘️-ধন্যবাদ প্রিয়-☘️💐\n𝄞❤️⋆⃝⑅⑅⃝❤️»̶̶͓͓̽̽̽»̶̶͓͓̽̽̽.𝗕𝗢𝗧-𝗢𝗪𝗡𝗘𝗥♥🖤𝐑𝐚𝐣𝐚_𝐁𝐚𝐛𝐮❤️⃪⃝⃘᭄⃕❤️"\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
       var nameAuthor = await Users.getNameUser(event.author)
       msg = msg
         .replace(/\{iduser}/g, iduser.join(', '))
@@ -182,4 +172,4 @@ https://www.facebook.com/www.xnxx.com169
       }
     } catch (e) { return console.log(e) };
   }
-}
+  }
