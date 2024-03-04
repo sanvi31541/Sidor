@@ -1,8 +1,8 @@
 module.exports.config = {
-	name: "uns",
+	name: "remove",
 	version: "1.0.5",
 	permission: 2,
-	credits: "Nayan",
+	credits: "BADOL-KHAN",
 	prefix: true,
 	description: "ban or unblock users",
 	category: "admin",
