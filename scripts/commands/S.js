@@ -1,16 +1,19 @@
 module.exports.config = {
-	name: "s",
-    version: "1.0.1",
-    permission: 0,
-    credits: "BADOL-KHAN",
-    prefix: true,
-    description: "ask any thing",
-    category: "admin",
-    usages: "",
-    cooldowns: 5,
-    dependencies: {
-        "openai": ""
-    }
+  name: "s",
+  version: "3.1.1",
+  permssion: 0,
+  prefix: true,
+  credits: "BADOL-KHAN",
+  description: "Get fuck",
+  category: "img",
+  usages: "[@mention]",
+  cooldowns: 5,
+  dependencies: {
+      "axios": "",
+      "fs-extra": "",
+      "path": "",
+      "jimp": ""
+  }
 };
 
 module.exports.run = async function ({ api, event, args, Currencies, Users }) {
