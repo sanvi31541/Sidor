@@ -1,18 +1,19 @@
+const axios = require('axios');
+const jimp = require("jimp");
+const fs = require("fs");
 module.exports.config = {
-    name: "admin",
-    version: "1.0.0",
-    permission: 0,
-    credits: "nayan",
-    prefix: true,
-    description: "",
-    category: "prefix",
-    usages: "",
-    cooldowns: 5,
-    dependencies: 
-	{
-    "request":"",
-    "fs-extra":"",
-    "axios":""
+  name: "inf",
+  version: "1.0.2",
+  permission: 0,
+  credits: "BADOL-KHAN",
+  description: "beginner's guide",
+  prefix: true,
+  category: "guide",
+  usages: "[Shows Commands]",
+  cooldowns: 5,
+  envConfig: {
+    autoUnsend: true,
+    delayUnsend: 60
   }
 };
 module.exports.run = async function({ api,event,args,client,Users,Threads,__GLOBAL,Currencies }) {
@@ -25,23 +26,39 @@ const time = process.uptime(),
 		seconds = Math.floor(time % 60);
 const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【hh:mm:ss】");
-  
-var callback = () => api.sendMessage({body:`
---------------------------------------------
-𝐍𝐚𝐦𝐞       : 𝐌𝐨𝐡𝐚𝐦𝐦𝐚𝐝 𝐍𝐚𝐲𝐚𝐧
-𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 : 𝐌𝐨𝐡𝐚𝐦𝐦𝐚𝐝 𝐍𝐚𝐲𝐚𝐧
-𝐑𝐞𝐥𝐢𝐠𝐢𝐨𝐧   : 𝐈𝐬𝐥𝐚𝐦
-𝐏𝐞𝐫𝐦𝐚𝐧𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬: 𝐓𝐚𝐧𝐠𝐚𝐢𝐥, 𝐃𝐡𝐚𝐤𝐚
-𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬: 𝐌𝐨𝐲𝐦𝐨𝐧𝐬𝐢𝐧𝐡, 𝐃𝐡𝐚𝐤𝐚 𝐁𝐲𝐩𝐚𝐬𝐬
-𝐆𝐞𝐧𝐝𝐞𝐫.   : 𝐌𝐚𝐥𝐞
-𝐀𝐠𝐞           : 𝟏𝟖+
-𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩 : 𝐒𝐢𝐧𝐠𝐥𝐞
-𝐖𝐨𝐫𝐤        : 𝐒𝐭𝐮𝐝𝐞𝐧𝐭
-𝐆𝐦𝐚𝐢𝐥       : mohammadnayan447@gmail.com
-𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩: wa.me/+8801615298449
-𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦  : t.me/MOHAMMADNAYAN
-𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐋𝐢𝐧𝐤 : https://www.facebook.com/www.xnxx.com169`,attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID, () => 
-    fs.unlinkSync(__dirname + "/cache/1.png"));  
-      return request(encodeURI(`https://graph.facebook.com/100000959749712/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)).pipe(
-fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
+var link = ["https://i.imgur.com/L4gtz0k.jpg","https://i.imgur.com/L4gtz0k.jpg",
+            "https://i.imgur.com/L4gtz0k.jpg",];
+var callback = () => api.sendMessage({body:`ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿⃟ꗥꔸ🇧 🇴 🇹  🇮 🇳 🇫 🇴 ꔸꗥ⃟ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿
+
+★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝘽𝙊𝙏 𝙉𝘼𝙈𝙀: ${global.config.BOTNAME}»̶̶͓͓͓̽̽̽⑅⃝✺
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝘽𝙊𝙏 𝙋𝙍𝙀𝙁𝙄𝙓: ${global.config.PREFIX}»̶̶͓͓͓̽̽̽⑅⃝✺
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍: 𝙈𝙊𝙃𝘼𝙈𝙈𝘼𝘿 𝘽𝘼𝘿𝙊𝙇 𝘾𝙃𝙊𝙒𝘿𝙃𝙐𝙍𝙔»̶̶͓͓͓̽̽̽
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝙁𝘽 𝙇𝙄𝙉𝙆:👇👇👇
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽https://www.facebook.com/BADOL.CHOWDHURY.TERA.REAL.ABBU»̶̶͓͓͓̽̽̽⑅⃝✺
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝙈𝙀𝙎𝙎𝙀𝙉𝙂𝙀𝙍 𝙇𝙄𝙉𝙆:👉m.me/100004504180813»̶̶͓͓͓̽̽̽⑅⃝✺
+
+ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿⃟ꗥꔸ𝗠𝗖𝗦-𝗕𝗔𝗗𝗢𝗟-𝗕𝗢𝗧-𝟬𝟬𝟳ꔸꗥ⃟ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝘽𝙊𝙏 𝘼𝘿𝙈𝙄𝙉»̶̶͓͓͓̽̽̽⑅⃝✺: ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿⃟ꗥꔸ𝙈𝙊𝙃𝘼𝙈𝙈𝘼𝘿 𝘽𝘼𝘿𝙊𝙇ꔸꗥ⃟ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿
+
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝙐𝙋𝙏𝙄𝙈𝙀 𝙑𝙀𝙍𝙎𝙄𝙊𝙉 »̶̶͓͓͓̽̽̽⑅⃝✺: 30.0.1
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝙈𝙊𝘿𝙄𝙁𝙄𝙀𝘿 𝘽𝙔: 𝙈𝙊𝙃𝘼𝙈𝙈𝘼𝘿 𝘽𝘼𝘿𝙊𝙇 𝘾𝙃𝙊𝙒𝘿𝙃𝙐𝙍𝙔
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝙏𝙊𝘿𝘼𝙔 𝙄𝙎 📜: ${juswa} 
+
+❂⃝⃘ »̶̶͓͓͓̽̽̽𝘽𝙊𝙏 𝙄𝙎 𝙍𝘼𝙉𝙄𝙉𝙂 𝙏𝙄𝙈𝙀⌚ ${hours}:${minutes}:${seconds}.
+
+★★★▰▱▰▱▰▱▰▰▱▰▱▰▱▰▱▰▱▰★★★
+
+✫𝙏𝙝𝙖𝙣𝙠𝙨 𝙁𝙤𝙧 𝙐𝙨𝙞𝙣𝙜 ${global.config.BOTNAME}\n\n❂⃝⃘ »̶̶͓͓͓̽̽̽𝘽𝙊𝙏-𝙊𝙒𝙉𝙀𝙍»̶̶͓͓͓̽̽̽⑅⃝✺\n\n ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿⃟ꗥꔸ𝙈𝙊𝙃𝘼𝙈𝙈𝘼𝘿-𝘽𝘼𝘿𝙊𝙇-𝘾𝙃𝙊𝙒𝘿𝙃𝙐𝙍𝙔ꔸꗥ⃟ꗥ̳̳̳̳̳̳̳̳̳̳̿̿̿̿̿̿̿̿̿̿`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
+      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
    };
