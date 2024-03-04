@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "nayan",
+  name: "Badol",
 	version: "1.0.0",
 	permission: 0,
   prefix: false,
