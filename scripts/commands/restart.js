@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "restart",
+	name: "resed",
 	version: "7.0.0",
 	permission: 2,
 	credits: "ryuko",
